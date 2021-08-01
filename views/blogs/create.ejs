@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+      <h2>Create Blog</h2>
+      <div class="container">
+        <form action="/blogs" method="POST">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Blog Title</label
+            >
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Blog title here"
+              aria-label="default input example"
+              name="title"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Blog Snippet</label
+            >
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Enter snippets"
+              aria-label=".form-control-lg example"
+              name="snippet"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >Blog Description</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              name="description"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <%- include('../partials/bodyjs.ejs') %>
+  </body>
+</html>

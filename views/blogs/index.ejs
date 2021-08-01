@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/navbar.ejs') %>
+
+    <div class="container">
+      <h2>Blog Home</h2>
+      <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <a href="/blog/<%= blog._id %>" class="anchor"
+            ><h1 class="display-4"><%= blog.title %></h1></a
+          >
+          <p class="lead"><%= blog.snippet %></p>
+          <hr class="my-4" />
+        </div>
+      </div>
+      <% }); %> <% } else { %>
+      <h2>No Blogs to Display...</h2>
+      <% } %>
+    </div>
+
+    <%- include('../partials/bodyjs.ejs') %>
+  </body>
+</html>
